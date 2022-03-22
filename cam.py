@@ -1,7 +1,7 @@
 import cv2;
 import numpy as np;
 import imutils;
-import keyboard;
+# import keyboard;
 import math;
 useSock = False;
 global __IDENTITY__
@@ -131,8 +131,8 @@ def process(src):
     x_origin = None;
     y_origin = None;
     while True:
-        if keyboard.is_pressed('f'):
-            exit();
+        # if keyboard.is_pressed('f'):
+        #     exit();
         best_keypoint = None;
         frame = cv2.flip(fetchNewImage(mode=FETCHIMAGE_MODE["CAM"],src=src),1);
         frame_result = frame_result if frame_result is not None else frame.copy();
@@ -160,20 +160,20 @@ def process(src):
         else:
             continue;
 
-        if keyboard.is_pressed('w') and not keyboard.is_pressed('q'):
-            z_origin += 0.2;
-        if keyboard.is_pressed('x') and not keyboard.is_pressed('q'):
-            z_origin -= 0.2;
+        # if keyboard.is_pressed('w') and not keyboard.is_pressed('q'):
+        #     z_origin += 0.2;
+        # if keyboard.is_pressed('x') and not keyboard.is_pressed('q'):
+        #     z_origin -= 0.2;
 
-        if keyboard.is_pressed('a'):
-            x_origin += 0.2;
-        if keyboard.is_pressed('d'):
-            x_origin -= 0.2;
+        # if keyboard.is_pressed('a'):
+        #     x_origin += 0.2;
+        # if keyboard.is_pressed('d'):
+        #     x_origin -= 0.2;
 
-        if keyboard.is_pressed('w') and keyboard.is_pressed('q'):
-            y_origin += 0.2;
-        if keyboard.is_pressed('x') and keyboard.is_pressed('q'):
-            y_origin -= 0.2;
+        # if keyboard.is_pressed('w') and keyboard.is_pressed('q'):
+        #     y_origin += 0.2;
+        # if keyboard.is_pressed('x') and keyboard.is_pressed('q'):
+        #     y_origin -= 0.2;
 
         if(best_keypoint is not None):
             frame_result = cv2.circle(frame_result, point2Int(best_keypoint), 3, (255,0,0), 2);
